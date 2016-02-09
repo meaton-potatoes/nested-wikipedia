@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Nested Wikipedia</title>
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Megrim' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="./nested-wikipedia.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+		<div id="search" class="section">
+			<input type="text" placeholder="What do you want to learn about?" id="searchField" class="form-control input-md" onkeydown="if (event.keyCode == 13) {search(document.getElementById('searchField').value,'searchResults'); return false;}"></input>
+			<button type="button" onclick="search(document.getElementById('searchField').value,'searchResults')" class="btn btn-default" title="Search"><i class="fa fa-search fa-1x"></i></button>
+			<button type="button" class="btn btn-default minimize"><i class="fa fa-minus fa-1x"></i></button>
+			<button type="button" onclick="clearSupporting()" class="btn btn-info trash" title="Click here to clear all supporting articles."><i class="fa fa-trash-o fa-1x"></i></button>	
+		<div>
+			<ul id="searchResults">
+			</ul>
+			</div>
+		</div>
+		<div id="main" class="section">
+			<h1>Nested Wikipedia</h1>
+			<p>How to use this tool:</p>
+			<ul>
+				<li>Search for your main article of interest by typing it into the search bar above and then clicking the <i class="fa fa-search fa-1x"></i>. The top 10 related terms will appear just below the search bar. Click on any of them to view its article in the main window.</li>
+				<li>Click the <i class="fa fa-minus fa-1x"></i> button to the right of the magnifying glass to toggle the view of the top 10 search results.</li>
+				<li>If there's a word/term you want to know more about in the main window, highlight it and (if there is a Wikipedia entry on it) it will appear under the "Supporting Articles" section to the right. You can also highlight unknown words/terms that you find within supporting articles.</li>
+				<li>You can remove an individual supporting article, just click on the <i class="fa fa-times fa-1x"></i> in the top right corner of the supporting article box. To clear out all supporting articles, click on the <i class="fa fa-trash-o fa-1x"></i> in the top right corner of your window.</li>
+				<li>Finally, if you decide that you want to move a supporting document into the main window, click on the <i class="fa fa-external-link-square fa-1x"></i> in the top right corner of the supporting article box.</li>
+			</ul>
+			<p>
+				I was inspired to make this tool when I first started learning about programming. It can be difficult and overwhelming to learn a completely new concept, because you come across so many new terms all at once. Hopefully this tool will help and encourage you to learn about big, new ideas.
+			</p>
+		</div>
+		<div id="supporting" class="section">
+			<h1>Supporting Articles</h1>
+			<div id="supportingArticles">
+			</div>
+		</div>
+			<footer>
+				© 2015 <a href="http://www.melissaeaton.me">Melissa Eaton</a>.
+			</footer>
+
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+			<script src="./nested-wikipedia.js"></script>
+
+	</body>
+
+</html>
